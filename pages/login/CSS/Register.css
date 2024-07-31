@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --success-color: #2691d9;
+    --error-color: #e74c3c;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    background: linear-gradient(128deg, #de5415, #d1db13);
+    overflow: hidden;
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+    /* trục ngang */
+    align-items: center;
+    /* trục dọc */
+  }
+
+  .container {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    padding: 40px;
+  }
+
+  .container h2 {
+    text-align: center;
+  }
+
+  .form-control {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+  }
+  /* Thuộc tính position được sử dụng để xác định vị trí của một element trong bố cục trang web */
+  /* static	Vị trí mặc định
+    relative	Định vị so với vị trí ban đầu
+    absolute	Định vị so với element cha
+    fixed	Định vị so với viewport
+    sticky	Định vị so với element cha, chuyển sang fixed khi cuộn trang */
+
+  .form-control input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #adadad;
+    /* border-bottom: <độ rộng> <kiểu> <màu>;
+    solid: Viền nét liền
+    dotted: Viền chấm bi
+    dashed: Viền nét đứt
+    double: Viền kép
+    none: Không có viền
+    */
+  }
+
+  .form-control span {
+    position: absolute;
+    border-bottom: 3px solid var(--success-color);
+    width: 0%;
+    left: 0;
+    top: 39px;
+    transition: 0.3s;
+  }
+
+  .form-control input:focus ~ span {
+    width: 100%;
+  }
+
+  .form-control.error small {
+    color: var(--error-color);
+  }
+
+  .form-control.error input {
+    border-bottom: 2px solid var(--error-color);
+  }
+
+  .btn-submit {
+    width: 100%;
+    height: 50px;
+    background-color: #008edc;
+    border: #008edc;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin: 25px 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-submit:hover {
+    background: #04253b;
+  }
+  .signup-link {
+    text-align: center;
+  }
+  .signup-link a {
+    color: var(--success-color);
+    text-decoration: none;
+    /* loại bỏ mọi dòng gạch chân, gạch chân, gạch ngang hoặc các dòng trang trí khác khỏi văn bản của một phần tử. */
+    cursor: pointer;
+  }
+  .signup-link a:hover {
+    text-decoration: underline;
+    /* được sử dụng để gạch chân văn bản của một phần tử. */
+  }
